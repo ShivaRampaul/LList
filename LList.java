@@ -20,16 +20,29 @@ class LinkedList {
 			head = new Node(val);
 		}
 		else {
-			// head.next = new Node(val);
 			Node ob = head;
 			while (ob.next != null) {
 				ob = ob.next;
 			}
 			ob.next = new Node(val);
 		}
-
 	}
 
+	int length() {
+		if (head == null) {
+			int i = 0;
+			return i;
+		}
+		else {
+			int i = 1;
+			Node ob1 = head;
+			while (ob1.next != null) {
+				ob1 = ob1.next;
+				i++;
+			}
+			return i;
+		}
+	}
 	// pushFront(int val) {
 
 	// }
@@ -44,7 +57,12 @@ class LList {
 		System.out.println(list.head.next.data);
 		list.push(8);
 		System.out.println(list.head.next.next.data);
+<<<<<<< HEAD
 		list.push(408795);
 		System.out.println(list.head.next.next.next.data);
+=======
+		list.push(10);
+		System.out.println(list.length());
+>>>>>>> bd99bd424c65fbc7a6594039d117011ff844a7bc
 	}
 }
