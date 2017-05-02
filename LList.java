@@ -75,6 +75,29 @@ class LinkedList {
 		head = head.next;
 		return val;
 	}
+
+	int popBack() {
+		int i = 1;
+		Node ob = head;
+		// last object
+		while (ob.next != null) {
+			ob = ob.next;
+			i++;
+		}
+		int j = 1;
+		// second to last object
+		Node ob1 = head;
+		for (; j < i - 1; j++) {
+			ob1 = ob1.next;
+		}
+		int val = ob1.next.data;
+		ob1.next = null;
+		return val;
+	}
+
+	// boolean remove(int x) {
+		
+	// }
 }
 
 class LList {
@@ -84,6 +107,8 @@ class LList {
 		list.push(9);
 		list.push(8);
 		list.push(10);
+		list.push(15);
+		System.out.println();
 		list.printer();
 		list.printLength();
 
@@ -91,12 +116,18 @@ class LList {
 		list.printer();
 		list.printLength();
 
+
 		System.out.println("Popped value: " + list.pop());
 		System.out.println();
 		list.printer();
 
-		System.out.println();
 		System.out.println("Current head: " + list.head.data);
 		list.printLength();
+
+		System.out.println("Popped value: " + list.popBack());
+		System.out.println();
+		list.printer();
+		list.printLength();
+
 	}
 }
