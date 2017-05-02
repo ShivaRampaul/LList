@@ -57,12 +57,11 @@ class LList {
 		System.out.println(list.head.next.data);
 		list.push(8);
 		System.out.println(list.head.next.next.data);
-<<<<<<< HEAD
+
 		list.push(408795);
 		System.out.println(list.head.next.next.next.data);
-=======
+
 		list.push(10);
 		System.out.println(list.length());
->>>>>>> bd99bd424c65fbc7a6594039d117011ff844a7bc
 	}
 }
