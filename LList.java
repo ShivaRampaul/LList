@@ -44,5 +44,7 @@ class LList {
 		System.out.println(list.head.next.data);
 		list.push(8);
 		System.out.println(list.head.next.next.data);
+		list.push(408795);
+		System.out.println(list.head.next.next.next.data);
 	}
 }
