@@ -11,10 +11,12 @@ class Node {
 class LinkedList {
 	Node head;
 
+	// constructor
 	LinkedList() {
 		head = null;
 	}
 
+	// adds val to end of list
 	void push(int val) {
 		if (head == null) {
 			head = new Node(val);
@@ -28,6 +30,7 @@ class LinkedList {
 		}
 	}
 
+	// totals length of list
 	int length() {
 		if (head == null) {
 			int i = 0;
@@ -44,6 +47,7 @@ class LinkedList {
 		}
 	}
 
+	// adds val to beginning of list
 	void pushFront(int val) {
 		if (head == null) {
 			head = new Node(val);
@@ -55,6 +59,7 @@ class LinkedList {
 		}
 	}
 
+	// printer method
 	void printer() {
 		Node ob = head;
 		System.out.print("Current list: \t" + ob.data + " ");
@@ -65,17 +70,20 @@ class LinkedList {
 		System.out.println();
 	}
 
+	// prints length of the list
 	void printLength() {
 		System.out.println("Length of list: " + this.length());
 		System.out.println();
 	}
 
+	// removes val from beginning of list
 	int pop() {
 		int val = head.data;
 		head = head.next;
 		return val;
 	}
 
+	// removes val from end of list
 	int popBack() {
 		int i = 1;
 		Node ob = head;
@@ -95,6 +103,7 @@ class LinkedList {
 		return val;
 	}
 
+	// removes x from the list
 	boolean remove(int x) {
 		Node ob = head;
 		int i = 0;
@@ -117,27 +126,23 @@ class LinkedList {
 		}
 	}
 
+	// find x in list and returns true
 	boolean find(int val) {
 		Node ob = head;
-		int i = 0;
 		while (ob.next != null) {
 			if (ob.data == val) {
-				i++;
+				return true;
 			}
 			ob = ob.next;
 		}
-		if (i > 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return false;
 	}
 }
 
 class LList {
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
+		// pushing numbers to end of list list
 		list.push(9);
 		list.push(5);
 		list.push(9);
@@ -147,33 +152,39 @@ class LList {
 		list.push(9);
 		list.push(15);
 
+		// print list
 		System.out.println();
 		list.printer();
 		list.printLength();
 
+		// adds 1 to end of list
 		System.out.println("pushing...");
 		list.pushFront(1);
 		list.printer();
 		list.printLength();
 
+		// removes 1 from front of list
 		System.out.println("popping...");
 		System.out.println("Popped value: " + list.pop());
 		list.printer();
 
 		System.out.println();
 
+		// removes object at end of list
 		System.out.println("popping...");
 		System.out.println("Popped value: " + list.popBack());
 		list.printer();
 		list.printLength();
 
+		// removes x from the list and returns true 
 		System.out.println("removing...");
 		System.out.println(list.remove(9));
 		list.printer();
 
+		// finds a value and returns true
 		System.out.println();
 		System.out.println("finding...");
-		System.out.println(list.find(1));
+		System.out.println(list.find(8));
 		list.printer();
 	}
 }
