@@ -98,14 +98,32 @@ class LinkedList {
 	boolean remove(int x) {
 		Node ob = head;
 		int i = 0;
+		if (ob.data == x) {
+			head = ob.next;
+		}
 		while (ob.next != null) {
 			if (ob.next.data == x) {
 				ob.next = ob.next.next;
 				i++;
+				continue;
 			}
-			// else {
-			// 	continue;
-			// }
+			ob = ob.next;
+		}
+		if (i > 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	boolean find(int val) {
+		Node ob = head;
+		int i = 0;
+		while (ob.next != null) {
+			if (ob.data == val) {
+				i++;
+			}
 			ob = ob.next;
 		}
 		if (i > 0) {
@@ -120,10 +138,11 @@ class LinkedList {
 class LList {
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
+		list.push(9);
 		list.push(5);
 		list.push(9);
 		list.push(9);
-		list.push(1);
+		//list.push(1);
 		// list.push(10);
 		// list.push(9);
 		// list.push(15);
@@ -148,7 +167,9 @@ class LList {
 		// list.printer();
 		// list.printLength();
 
-		System.out.println(list.remove(9));
+		//System.out.println(list.remove(9));
 		list.printer();
+
+		System.out.println(list.find(9));
 	}
 }
