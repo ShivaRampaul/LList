@@ -57,10 +57,10 @@ class LinkedList {
 
 	void printer() {
 		Node ob = head;
-		System.out.print(ob.data + "\t");
+		System.out.print("Current list: \t" + ob.data + " ");
 		while (ob.next != null) {
 			ob = ob.next;
-			System.out.print(ob.data + "\t");
+			System.out.print(ob.data + " ");
 		}
 		System.out.println();
 	}
@@ -142,34 +142,38 @@ class LList {
 		list.push(5);
 		list.push(9);
 		list.push(9);
-		//list.push(1);
-		// list.push(10);
-		// list.push(9);
-		// list.push(15);
-		// System.out.println();
-		// list.printer();
-		// list.printLength();
+		list.push(1);
+		list.push(10);
+		list.push(9);
+		list.push(15);
 
-		// list.pushFront(1);
+		System.out.println();
 		list.printer();
-		// list.printLength();
+		list.printLength();
 
+		System.out.println("pushing...");
+		list.pushFront(1);
+		list.printer();
+		list.printLength();
 
-		// System.out.println("Popped value: " + list.pop());
-		// System.out.println();
-		// list.printer();
-
-		// System.out.println("Current head: " + list.head.data);
-		// list.printLength();
-
-		// System.out.println("Popped value: " + list.popBack());
-		// System.out.println();
-		// list.printer();
-		// list.printLength();
-
-		//System.out.println(list.remove(9));
+		System.out.println("popping...");
+		System.out.println("Popped value: " + list.pop());
 		list.printer();
 
-		System.out.println(list.find(9));
+		System.out.println();
+
+		System.out.println("popping...");
+		System.out.println("Popped value: " + list.popBack());
+		list.printer();
+		list.printLength();
+
+		System.out.println("removing...");
+		System.out.println(list.remove(9));
+		list.printer();
+
+		System.out.println();
+		System.out.println("finding...");
+		System.out.println(list.find(1));
+		list.printer();
 	}
 }
